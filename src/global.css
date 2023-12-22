@@ -1,0 +1,157 @@
+.childContainerChat {
+    height: 85vh;
+    width: 85vw;
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+
+.containerContact {
+    display: grid;
+    grid-template-rows: 10% 75% 15%;
+    overflow: hidden;
+}
+
+.childContainerContacts::-webkit-scrollbar {
+    width: 0.2;
+}
+
+.childContainerContacts::-webkit-scrollbar-thumb {
+    background-color: #ffffff39;
+    width: 0.1rem;
+    border-radius: 1rem;
+}
+
+.childContainerContact {
+    background-color: #ffffff34;
+    min-height: 5rem;
+    cursor: pointer;
+    width: 90%;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+}
+
+.containerChatContainer {
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    gap: 0.1rem;
+    overflow: hidden;
+}
+
+.childMessages::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+.childMessages::-webkit-scrollbar-thumb {
+    background-color: #ffffff39;
+    width: 0.1rem;
+    border-radius: 1rem;
+}
+
+.childMessagesContent {
+    max-width: 40%;
+    overflow-wrap: break-word;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+}
+
+.sended {
+    justify-content: flex-end;
+}
+
+.sended .childMessagesContent {
+    background-color: #4f04ff21;
+}
+
+.recieved {
+    justify-content: flex-start;
+}
+
+.recieved .childMessagesContent {
+    background-color: #9900ff20;
+}
+
+.containerInputChat {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 5% 95%;
+    padding: 0 2rem;
+}
+
+.emoji {
+    position: relative;
+}
+
+.emoji svg {
+    font-size: 1.5rem;
+    color: #f1ad0c;
+    cursor: pointer;
+}
+
+.EmojiPickerReact {
+    position: absolute;
+    top: -500px;
+    box-shadow: 0 5px 10px;
+}
+
+.emoji-scroll-wrapper::-webkit-scrollbar {
+    background-color: #080420;
+    width: 5px;
+}
+
+.emoji-scroll-wrapper::-webkit-scrollbar-thumb {
+    background-color: #9a86f3;
+}
+
+.inputSendMsg {
+    width: 90%;
+    height: 60%;
+    border: none;
+    padding-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.inputSendMsg::selection {
+    background-color: #9a86f3;
+}
+
+.inputSendMsg:focus {
+    outline: none;
+}
+
+.buttonSend svg {
+    font-size: 1.5rem;
+}
+
+
+@media screen and (min-width: 720px) and (max-width: 1080px) {
+    .childContainerChat {
+        grid-template-columns: 35% 65%;
+    }
+
+    .childContainerUsername>h2 {
+        font-size: 1 rem;
+    }
+
+    .containerChatContainer {
+        grid-template-rows: 15% 70% 15%;
+    }
+
+    .childMessagesContent {
+        max-width: 70%;
+    }
+
+    .containerInputChat {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .buttonSend svg {
+        font-size: 1rem;
+    }
+}
