@@ -33,7 +33,7 @@ const useRegister = () => {
             }
             if (data.status === true) {
                 showSucces();
-                localStorage.setItem(process.env.LOCALHOST_KEY, JSON.stringify(data.user));
+                localStorage.setItem(process.env.REACT_APP_API_KEY, JSON.stringify(data.user));
                 setTimeout(() => {
                     navigate('/')
                 }, 1000)

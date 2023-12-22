@@ -6,7 +6,7 @@ const useLogout = () => {
     const navigate = useNavigate();
     const handleClick = async () => {
         const id = await JSON.parse(
-            localStorage.getItem(process.env.LOCALHOST_KEY)
+            localStorage.getItem(process.env.REACT_APP_API_KEY)
         )._id;
         const data = await axios.get(`${logoutRoute}/${id}`);
         if (data.status === 200) {

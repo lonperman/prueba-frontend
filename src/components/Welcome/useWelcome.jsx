@@ -7,7 +7,7 @@ const useWelcome = () => {
         const fetchLocalStore = async () => {
             setUserName(
                 await JSON.parse(
-                    localStorage.getItem(process.env.LOCALHOST_KEY)
+                    localStorage.getItem(process.env.REACT_APP_API_KEY)
                 ).username
             );
         }

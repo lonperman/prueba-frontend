@@ -10,7 +10,7 @@ const useLogin = () => {
     const navigate = useNavigate();
   
     useEffect(() => {
-      if (localStorage.getItem(process.env.LOCALHOST_KEY)) {
+      if (localStorage.getItem(process.env.REACT_APP_API_KEY)) {
         navigate('/')
       }
     }, []);
@@ -34,7 +34,7 @@ const useLogin = () => {
         }
         if (data.status === true) {
           showSucces();
-          localStorage.setItem(process.env.LOCALHOST_KEY, JSON.stringify(data.user));
+          localStorage.setItem(process.env.REACT_APP_API_KEY, JSON.stringify(data.user));
           setTimeout(() => {
             navigate('/')
           }, 1000)

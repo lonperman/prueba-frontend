@@ -14,7 +14,7 @@ const useAvatar = () => {
 
     useEffect(() => {
         const fetchLocalStore = async () => {
-            if (!localStorage.getItem(process.env.LOCALHOST_KEY))
+            if (!localStorage.getItem(process.env.REACT_APP_API_KEY))
                 navigate("/login");
         }
         fetchLocalStore()
@@ -25,7 +25,7 @@ const useAvatar = () => {
             showError("Please select an avatar")
         } else {
             const user = await JSON.parse(
-                localStorage.getItem(process.env.LOCALHOST_KEY)
+                localStorage.getItem(process.env.REACT_APP_API_KEY)
             );
 
             const { data } = await axios.post(`${setAvatarRoute}/${user._id}`, {
@@ -36,7 +36,7 @@ const useAvatar = () => {
                 user.isAvatarImageSet = true;
                 user.avatarImage = data.image;
                 localStorage.setItem(
-                    process.env.LOCALHOST_KEY,
+                    process.env.REACT_APP_API_KEY,
                     JSON.stringify(user)
                 );
                 navigate("/");

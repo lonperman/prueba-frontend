@@ -14,10 +14,10 @@ const useChat = () => {
 
     useEffect(() => {
         const fetchLocalStore = async () => {
-            if (!localStorage.getItem(process.env.LOCALHOST_KEY)) {
+            if (!localStorage.getItem(process.env.REACT_APP_API_KEY)) {
                 navigate("/login");
             } else {
-                setCurrentUser(await JSON.parse(localStorage.getItem(process.env.LOCALHOST_KEY)))
+                setCurrentUser(await JSON.parse(localStorage.getItem(process.env.REACT_APP_API_KEY)))
             }
 
         }
