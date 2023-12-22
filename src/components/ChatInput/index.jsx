@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BsEmojiSmileFill } from 'react-icons/bs';
 import { IoMdSend } from 'react-icons/io';
 import Picker from 'emoji-picker-react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import useChatInput from './useChatInput';
 
 
 export default function ChatInput({ handleSendMsg }) {
-    const [msg, setMsg] = useState("");
-    const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-    const handleEmojiPickerhideShow = () => {
-        setShowEmojiPicker(!showEmojiPicker);
-    };
 
-    const handleEmojiClick = (event) => {
-        let message = msg;
-        message += event.emoji;
-        setMsg(message);
-    }
-
-    const sendChat = (event) => {
-        event.preventDefault();
-        if (msg.length > 0) {
-            handleSendMsg(msg);
-            setMsg("");
-        }
-    }
+    const {
+        msg,
+        showEmojiPicker,
+        setMsg,
+        sendChat,
+        handleEmojiClick,
+        handleEmojiPickerhideShow
+    } = useChatInput({ handleSendMsg })
+    
     return (
         <div className='containerInputChat py-1 bg-gray-400'>
             <div className='flex align-items-center gap-3'>

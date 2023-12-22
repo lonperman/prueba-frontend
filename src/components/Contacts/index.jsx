@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import logo from "../assets/helpdesk.jpg";
+import React from 'react'
+import logo from "../../assets/helpdesk.jpg";
+import useContacts from './useContacts';
 
 export default function Contacts({ contacts, changeChat }) {
-    const [currentUserName, setCurrentUserName] = useState(undefined);
-    const [currentUserImage, setCurrentUserImage] = useState(undefined);
-    const [currentSelected, setCurrentSelected] = useState(undefined);
-
-    useEffect(() => {
-        const fetchLocalStore = async () => {
-            const data = await JSON.parse(
-                localStorage.getItem("chat-app-user")
-            );
-            setCurrentUserName(data.username);
-            setCurrentUserImage(data.avatarImage);
-        }
-
-        fetchLocalStore()
-    }, []);
-
-    const changeCurrentChat = (index, contact) => {
-        setCurrentSelected(index);
-        changeChat(contact);
-    };
-
+    const {
+        currentUserName,
+        currentUserImage,
+        currentSelected,
+        changeCurrentChat
+    } = useContacts({ changeChat })
     return (
         <>
             {
